@@ -12,9 +12,23 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        greenSquare.backgroundColor = .green
+        view.addSubview(greenSquare)
     }
 
-
+    @IBAction func Animatee(_ sender: Any) {
+        UIView.animate(withDuration: 0.5) {
+            
+            var frame = self.greenSquare.frame
+            frame.origin.x += 100
+            frame.origin.y += 200
+            
+            self.greenSquare.frame = frame
+        }
+    }
+    
+    let greenSquare = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+    
 }
 
